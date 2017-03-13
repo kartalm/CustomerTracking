@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+     xmlns:bal="http://schemas.microsoft.com/wix/BalExtension"
+     xmlns:dep="http://schemas.microsoft.com/wix/DependencyExtension"
+     xmlns:netfx="http://schemas.microsoft.com/wix/WixNetFxExtension"
+     xmlns:sql="http://schemas.microsoft.com/wix/SqlExtension">
+
+  <?include Variables.wxi?>
+  
+	<Bundle Copyright="Copyright© 2017" Name="CustomerTracking.Bootstrapper" Version="1.0.0.0" Manufacturer="Mehmet KARTAL" UpgradeCode="184ca148-9e45-48b8-a3ed-949f64487b96">
+		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense">
+    <bal:WixStandardBootstrapperApplication
+         LicenseUrl=""
+         SuppressOptionsUI="yes"
+         xmlns:bal="http://schemas.microsoft.com/wix/BalExtension" />
+    </BootstrapperApplicationRef>
+
+    <!-- Database username and password -->
+    <Variable Name="SqlLoginCredential" Type="string" Value="/SAPWD=eae2014*" Hidden="yes" />
+    <!-- ++++++++++++++++++++++++++++++ -->
+
+    <!-- Registry search below checks the sql instance installed or not -->
+    <util:RegistrySearch
+      Id="SqlInstanceNameFound"
+      Root="HKLM" Key="SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL" Value="$(var.SqlInstanceName)"
+      Result="exists" Variable="SqlInstanceNameFound"  Win64="yes"/>
+    <!-- +++++++++++++++ -->
+    
+    <util:RegistrySearch
+      Id="SqlInstanceName"
+      Root="HKLM" Key="SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL" Value="$(var.SqlInstanceName)"
+      Variable="SqlInstanceName" After="SqlInstanceNameFound" Condition="SqlInstanceNameFound"  Win64="yes"/>
+    <!-- +++++++++++++++ -->
+
+    <!-- Registry search below checks if 'SqlInstanceName' variable has value or Sql Instance Name is found, this condition is assigned to 'SqlInstanceFound' condition -->
+    <util:RegistrySearch
+      Id="SqlInstanceFound"
+      Root="HKLM" Key="SOFTWARE\Microsoft\Microsoft SQL Server\[SqlInstanceName]"
+      Result="exists" Variable="SqlInstanceFound" After="SqlInstanceName" Condition="SqlInstanceNameFound"  Win64="yes"/>
+    <!-- +++++++++++++++ -->
+
+    <!-- Registry search below checks if 'SqlInstanceName' variable has value or Sql Instance Name is found, the version of instance is assigned to 'SqlVersion' variable -->
+    <util:RegistrySearch
+      Id="SqlVersion"
+      Root="HKLM" Key="SOFTWARE\Microsoft\Microsoft SQL Server\[SqlInstanceName]\Setup" Value="Version"
+      Variable="SqlVersion" After="SqlInstanceName" Condition="SqlInstanceFound"  Win64="yes"/>
+    <!-- +++++++++++++++ -->
+    
+    <Chain DisableRollback="no" DisableSystemRestore="no" ParallelCache="no">
+
+      <PackageGroupRef Id="Sql2014Express" />
+      
+      <MsiPackage Id="CustomerTrackingExecutable.Setup" SourceFile="..\CustomerTrackingExecutable.Setup\bin\Release\CustomerTrackingExecutable.Setup.msi" DisplayName="Müşteri Takip Sistemi Yapılandırılıyor..."  Compressed="yes" After="Sql2014Express" />
+    </Chain>
+
+	</Bundle>
+
+  <Fragment>
+    <!-- +++++++++++++ SQL Server 2014 Express Engine and Tools Installation +++++++++++++  -->
+    <PackageGroup Id="Sql2014Express">
+      <ExePackage Id="Sql2014Express"
+        DisplayName="Veritabanı Yükleniyor... (SQL Server 2014 Express)"
+        Cache="yes"
+        Compressed="no"
+        PerMachine="default"
+        Permanent="no"
+        Vital="yes"
+        Name="Redist\SQLEXPRADV_x64_ENU.exe"
+        SourceFile="Tools\SQLEXPRADV_x64_ENU.exe"
+        InstallCommand="/ACTION=Install /INSTANCEID=$(var.SqlInstanceName) /INSTANCENAME=$(var.SqlInstanceName) /ISSVCPASSWORD=eae2014* /FEATURES=SQL,SSMS /SECURITYMODE=SQL /SAPWD=eae2014* /TCPENABLED=1 /SQLSVCACCOUNT=&quot;NT AUTHORITY\NETWORK SERVICE&quot; /SQLSVCSTARTUPTYPE=&quot;Automatic&quot; /ENU=True /SQLSYSADMINACCOUNTS=BUILTIN\Administrators /ADDCURRENTUSERASSQLADMIN=TRUE /ENABLERANU=True  /SkipRules=RebootRequiredCheck /Q /HIDECONSOLE /IAcceptSQLServerLicenseTerms=True"
+        UninstallCommand="/Action=Uninstall /INSTANCENAME=$(var.SqlInstanceName) /FEATURES=SSMS /Q /HIDECONSOLE"
+        RepairCommand="/ACTION=Repair /INSTANCENAME=$(var.SqlInstanceName) /Q /HIDECONSOLE"
+        InstallCondition="NOT SqlInstanceFound">
+        <ExitCode Value ="3010" Behavior="forceReboot" />
+        <dep:Provides DisplayName="SQL Server 2014 Express" Key="SQLServer2014Express,$(var.SqlInstanceName)" Version="12.0.2000.8" />
+      </ExePackage>
+    </PackageGroup>
+  </Fragment>
+  
+</Wix>

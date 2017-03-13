@@ -1,0 +1,7 @@
+obj\Release\AssemblyHarvest.wixobj
+obj\Release\Product.wixobj
+D:\EAE.Backup\Projects\Other\CustomerTracking\CustomerTrackingExecutable.Setup\bin\Release\CustomerTrackingExecutable.Setup.msi
+D:\EAE.Backup\Projects\Other\CustomerTracking\CustomerTrackingExecutable.Setup\bin\Release\CustomerTrackingExecutable.Setup.wixpdb
+obj\Release\CustomerTrackingExecutable.Setup.wixproj.BindContentsFileListnull.txt
+obj\Release\CustomerTrackingExecutable.Setup.wixproj.BindOutputsFileListnull.txt
+obj\Release\CustomerTrackingExecutable.Setup.wixproj.BindBuiltOutputsFileListnull.txt

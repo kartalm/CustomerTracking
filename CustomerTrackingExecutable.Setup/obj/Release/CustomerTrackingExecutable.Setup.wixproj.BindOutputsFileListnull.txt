@@ -1,0 +1,2 @@
+D:\EAE.Backup\Projects\Other\CustomerTracking\CustomerTrackingExecutable.Setup\bin\Release\CustomerTrackingExecutable.Setup.msi
+D:\EAE.Backup\Projects\Other\CustomerTracking\CustomerTrackingExecutable.Setup\bin\Release\CustomerTrackingExecutable.Setup.wixpdb

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  
+	<Product Id="*" Name="CustomerTrackingExecutable.Setup" Language="1033" Version="1.0.0.0" Manufacturer="Mehmet KARTAL" UpgradeCode="6f81f548-5ef0-44f8-bbf7-f72d44fe4b68">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="CustomerTrackingProductFeature" Title="CustomerTrackingExecutable.Setup" Level="1"> 
+      <ComponentGroupRef Id="CustomerTrackingProductComponents" />
+      <ComponentRef Id="ApplicationShortcut" />
+		</Feature>
+	</Product>
+
+  <!-- Directory Tree Below copies all necessary files in Program Files (x86 folder) in specified folder -->
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="CustomerTrackingExecutableFolder" Name="Customer Tracking System" />
+      </Directory>
+      <Directory Id="DesktopFolder" />
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="ApplicationShortcut" Guid="B93A0146-941C-415C-BBEF-70069DF4EE77">
+        <Shortcut Id="ApplicationDesktopShortcut"
+                Name="CustomerTracking"
+                Description="Customer Tracking System"
+                Target="[CustomerTrackingExecutableFolder]CustomerTracking.exe"
+                WorkingDirectory="CustomerTrackingExecutableFolder"/>
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\CustomerTracking" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+        <RemoveFolder Id="CustomerTrackingExecutableFolder" On="uninstall"/>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

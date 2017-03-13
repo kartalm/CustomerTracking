@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?include Variables.wxi?>
+    <Fragment>
+        <DirectoryRef Id="CustomerTrackingExecutableFolder">
+            <Directory Id="dir3253514C636225C16110FA9084C3AD1B" Name="${basedir}" />
+            <Directory Id="dir5B708A4969ADC640207C26219C666BF4" Name="amd64" />
+            <Directory Id="dirA0912636B96C00A484E583AA4148CBAC" Name="Content" />
+            <Directory Id="dir16A80E821B0C43336CA5F544B935CD45" Name="de" />
+            <Directory Id="dir47D359E5D3BEF2EA5C0D972FC17A007C" Name="Logs" />
+            <Directory Id="dir86950C7CE3DD0051B78BD85D98C081A4" Name="x86" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="CustomerTrackingProductComponents">
+            <Component Id="cmp006085DA08871B5AC41D05F709A60D23" Directory="CustomerTrackingExecutableFolder" Guid="{D55C3A8A-6F1B-4C52-B9DF-302291A18174}">
+                <File Id="filE2AFCC8FBF902C4C88BBCC1AE64B7FE8" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\Autofac.dll" />
+            </Component>
+            <Component Id="cmpC58D896CBDCA86FC0CB3A8B5B4F84C87" Directory="CustomerTrackingExecutableFolder" Guid="{2EBA4ECB-0561-4D17-A4EF-E96EAA3283AA}">
+                <File Id="fil3529344CAAAA21A18B9C08EB261CF486" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\Autofac.xml" />
+            </Component>
+            <Component Id="cmp0055945C25BB2C2FB835BCBCEB07DF9E" Directory="CustomerTrackingExecutableFolder" Guid="{EBE021C6-200F-4407-9939-F548FDB54F30}">
+                <File Id="fil832D6DE081ABF427E29C503477A47AD3" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\CustomerTracking.exe" />
+            </Component>
+            <Component Id="cmp6EFE735077F62D4B397670576BF94A6B" Directory="CustomerTrackingExecutableFolder" Guid="{BC983A95-B554-4D5E-ACCF-168FF17021E9}">
+                <File Id="filC31422D628907785C83B39CDED9DBFFC" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\CustomerTracking.exe.config" />
+            </Component>
+            <Component Id="cmpFFAA54FEA945FC6AC9863593B1AC46F9" Directory="CustomerTrackingExecutableFolder" Guid="{43A1F271-4DBE-4188-B8DA-B4E5A556F3DC}">
+                <File Id="filF4A767BDD7459EBEE9F527BBB073EDCB" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\CustomerTracking.pdb" />
+            </Component>
+            <Component Id="cmp7148784FD0C32372DD4708C382768CC3" Directory="CustomerTrackingExecutableFolder" Guid="{01A9B28A-2D83-40D0-96DC-4417C2264B42}">
+                <File Id="fil796E29A0A92E79044CF2D28DAE3BF996" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\CustomerTracking.vshost.exe" />
+            </Component>
+            <Component Id="cmpAF79875EA5245987B4884A06CCA894DB" Directory="CustomerTrackingExecutableFolder" Guid="{397988F7-2E91-4F4D-B9D1-7E6B6FA0B02F}">
+                <File Id="fil31DDC5B689D58CBC9C6DC264B86ED789" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\CustomerTracking.vshost.exe.config" />
+            </Component>
+            <Component Id="cmp6B4BEC5837A90E8188FDD62E52B70E18" Directory="CustomerTrackingExecutableFolder" Guid="{009A694A-67D5-4BFB-8EBB-9DCE0E0175DE}">
+                <File Id="fil48659F0EA063A9BA2A20E1E303748AD8" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\CustomerTracking.vshost.exe.manifest" />
+            </Component>
+            <Component Id="cmp9458358E3A18F0D1356B82037B489D00" Directory="CustomerTrackingExecutableFolder" Guid="{E8901269-AF68-4C07-8B48-2349B63C8A41}">
+                <File Id="filE5220F945DB5BF1E8027F40155FFA59C" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\EntityFramework.dll" />
+            </Component>
+            <Component Id="cmp075E8CB1D8C572031C1F7AAD6592CB06" Directory="CustomerTrackingExecutableFolder" Guid="{35275197-51A4-40D2-B1D1-63E0B2E5628E}">
+                <File Id="fil31752D1BB04B30CC79CE602F3749605C" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\EntityFramework.SqlServer.dll" />
+            </Component>
+            <Component Id="cmp6BF3F28763CC25EDF829513CC5B27154" Directory="CustomerTrackingExecutableFolder" Guid="{17DEEA3D-8596-463A-BD24-3DB6B90ECB54}">
+                <File Id="fil5C8458D76CD065AD726472EDB696C64C" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\NLog.config" />
+            </Component>
+            <Component Id="cmp7F5B735CA47C950C9B8004EDA0742069" Directory="CustomerTrackingExecutableFolder" Guid="{41BFCEEC-6754-4B95-90C4-99BBACFF0ED1}">
+                <File Id="filF09C24AC0ABAEBBC4EA362064D287BF7" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\NLog.dll" />
+            </Component>
+            <Component Id="cmpA24B631945E88EC1C1665F8D7F550712" Directory="CustomerTrackingExecutableFolder" Guid="{6E66EB8B-644E-46D0-87FB-B842C6D59022}">
+                <File Id="filF119FE2C0335CAEA77F923A64D8A13E1" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\NLog.xml" />
+            </Component>
+            <Component Id="cmpA830F6DA359500BC13E974602888F532" Directory="CustomerTrackingExecutableFolder" Guid="{D1C1E836-374E-4939-A47C-488BECFCC0AD}">
+                <File Id="fil4A4BCEB38B9863AEA485B67D7D0A2768" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\PdfSharp.Charting.dll" />
+            </Component>
+            <Component Id="cmp1F9C17023D528D6928F54E27CB4E988A" Directory="CustomerTrackingExecutableFolder" Guid="{386BA4AD-82C4-4384-85D1-88D8B3DEED2D}">
+                <File Id="filBA6840C12A52D395CAC4DA0D323011BA" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\PdfSharp.Charting.xml" />
+            </Component>
+            <Component Id="cmpC39C5BF28B7040C24C51A1564F8A59F9" Directory="CustomerTrackingExecutableFolder" Guid="{DA8320DF-CF3D-49B2-8B5F-6D8F23B32B62}">
+                <File Id="fil94C18377FEB55ED48BA7F33814C3431A" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\PdfSharp.dll" />
+            </Component>
+            <Component Id="cmp77203422963318F7F53854DB26F472D6" Directory="CustomerTrackingExecutableFolder" Guid="{755CBBD1-8ABC-4CAC-A2A3-2DBBB5400545}">
+                <File Id="filBC1337972881C7594AD82A620DD92F5F" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\PdfSharp.xml" />
+            </Component>
+            <Component Id="cmpE208C4298E0D9ADAD15EFAC92C7E2D8F" Directory="dir3253514C636225C16110FA9084C3AD1B" Guid="{CE130C9E-3EA0-46DA-B4BE-F8301CF2C39E}" KeyPath="yes">
+                <CreateFolder />
+            </Component>
+            <Component Id="cmpDF32173E31BC7821F276A093D28D0999" Directory="dir110F985D3947BDF635CBEAE56330133C" Guid="{7A3BF8EE-4D82-4901-AA70-03C505C97ECD}" KeyPath="yes">
+                <CreateFolder />
+            </Component>
+            <Component Id="cmpD3907A3840378C4585B891FD2C221665" Directory="dir5B708A4969ADC640207C26219C666BF4" Guid="{FB4C5673-517C-4CF8-B936-FC59551807DC}">
+                <File Id="fil805247CBD201A2BE83A6592024A199FF" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\amd64\sqlceca40.dll" />
+            </Component>
+            <Component Id="cmpB088EDDE7F1907F28D8976C3D97B9D30" Directory="dir5B708A4969ADC640207C26219C666BF4" Guid="{C0E1A38B-F361-42E9-8148-52489B7C2599}">
+                <File Id="filBED2E12638EC54F0BF5C8F7ED4BE83E7" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\amd64\sqlcecompact40.dll" />
+            </Component>
+            <Component Id="cmp1A741E0E4E85F6DE8CCC069326CC9405" Directory="dir5B708A4969ADC640207C26219C666BF4" Guid="{3E1F032C-3180-46CC-A80C-BA691328E3B5}">
+                <File Id="fil12E1F9D13408899F8DCC4A1829347EF2" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\amd64\sqlceer40EN.dll" />
+            </Component>
+            <Component Id="cmp0033C41F8952DC4C83628FEDDDF027D0" Directory="dir5B708A4969ADC640207C26219C666BF4" Guid="{1D204039-D46C-43FD-ABE1-F74C2A961AD3}">
+                <File Id="fil4423C0120F1D7CECADC4747514EFF7FF" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\amd64\sqlceme40.dll" />
+            </Component>
+            <Component Id="cmp48C917D590140ED68AC071B344C5ADB4" Directory="dir5B708A4969ADC640207C26219C666BF4" Guid="{73986239-126C-4938-BAB3-C574A7FD76D9}">
+                <File Id="fil36F2D60DA072C3EC0CBD1F48D912927C" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\amd64\sqlceqp40.dll" />
+            </Component>
+            <Component Id="cmpE0A5EDC9EB56C9B0EF1CC8EBBFBFBE82" Directory="dir5B708A4969ADC640207C26219C666BF4" Guid="{A0B2A743-1181-461C-B0F6-228D5DBE49C7}">
+                <File Id="fil6D61E319BD920A08AB55E92E15A9DC3C" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\amd64\sqlcese40.dll" />
+            </Component>
+            <Component Id="cmpD4CEF7F0A0065513728194693812A22E" Directory="dir131C69EF83D78668A94E415512CC1329" Guid="{45650929-5F44-44FE-A3B9-745C1F231BF4}">
+                <File Id="fil21B3222C68F25C502E7469E7DC8FD53C" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+            </Component>
+            <Component Id="cmp3600F6968183D2B36A628A693961C445" Directory="dir131C69EF83D78668A94E415512CC1329" Guid="{0EAF14A9-DAA4-40E0-8DD3-FA8983EA090E}">
+                <File Id="fil839F9D1DB317E13CA9169F83F5658F15" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
+            </Component>
+            <Component Id="cmpF18841FB60E84F0EAC42461AE7A707DF" Directory="dir131C69EF83D78668A94E415512CC1329" Guid="{62CBDF10-B341-4549-8F28-E402E0A3DDA5}">
+                <File Id="filA2D930FADCA16E41D007CF220BD30E6E" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
+            </Component>
+            <Component Id="cmpA4E1CAA4FA55673EE0E08CDBF2546F23" Directory="dirA0912636B96C00A484E583AA4148CBAC" Guid="{456FC4C1-7AE4-488E-B06C-D28993CF111B}">
+                <File Id="filF606D382F956381C2071C60DA580E5CA" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\Content\Back.jpg" />
+            </Component>
+            <Component Id="cmp512653AE524735C5379344E225F3A372" Directory="dirA0912636B96C00A484E583AA4148CBAC" Guid="{FB58EC1E-ACB4-4ACD-BF21-CDE0FCFBA07E}">
+                <File Id="fil338602F1285EC9AEEC8798AB3CE661F3" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\Content\Back3.jpg" />
+            </Component>
+            <Component Id="cmp4721F553F4B94AA51907420910A5E7DC" Directory="dirA0912636B96C00A484E583AA4148CBAC" Guid="{DD7FECC3-C6EC-40B8-91D5-15403FD2EC62}">
+                <File Id="fil54B915A763296EC3A91E889B12F18E8D" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\Content\Close.png" />
+            </Component>
+            <Component Id="cmp1EA1F2EA0982BE2F8E884B0B4F348B03" Directory="dirA0912636B96C00A484E583AA4148CBAC" Guid="{325FD593-FF11-4A3B-A5BD-3F936E40FFDE}">
+                <File Id="filE41028C3E4234E21F4AD1C545B4E5314" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\Content\fastforward.JPG" />
+            </Component>
+            <Component Id="cmp09BD2A9E554DE7958155BE1908934142" Directory="dirA0912636B96C00A484E583AA4148CBAC" Guid="{6FA0AACA-534C-4E18-B351-228892B2D147}">
+                <File Id="fil7B2DA87F56B2461073EB4F8C140BB508" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\Content\fastreverse.JPG" />
+            </Component>
+            <Component Id="cmpB7373A490C00C87C1E4BE91471D15A5B" Directory="dirA0912636B96C00A484E583AA4148CBAC" Guid="{C12FB942-F43D-4953-9EA1-91778799B0AF}">
+                <File Id="fil0F4C8137933307193C3379F99D499E7C" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\Content\Forward.jpg" />
+            </Component>
+            <Component Id="cmp29DE1E6C018239E68309BCA3FE8E66A5" Directory="dirA0912636B96C00A484E583AA4148CBAC" Guid="{424B07EA-5815-45C9-B8EF-4F636D8A6D01}">
+                <File Id="fil2B895EEED2B407EA90ABE5AB6F3EB322" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\Content\Forward1.jpg" />
+            </Component>
+            <Component Id="cmp49EA07279A92CAC697DD45527246695E" Directory="dirA0912636B96C00A484E583AA4148CBAC" Guid="{353CA599-6532-4501-AEEF-AF305F9172CC}">
+                <File Id="filE17631515DF380B61516538781F6EFFE" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\Content\loader.gif" />
+            </Component>
+            <Component Id="cmp4521D0474EA43DF94E5DAABE23ED05A3" Directory="dirA0912636B96C00A484E583AA4148CBAC" Guid="{03FDC41A-E041-44AD-A7F7-DB7DE8D1C630}">
+                <File Id="filCA58224BBCE856D9DF561089B2FB6D4E" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\Content\logo.png" />
+            </Component>
+            <Component Id="cmp8C151497A32463A5BB7729534D95BE9A" Directory="dirA0912636B96C00A484E583AA4148CBAC" Guid="{769176B5-80EC-4503-9ABB-C3969192C7CB}">
+                <File Id="fil5914A018D6895D6FC646895A80B1AB98" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\Content\pdfimage.png" />
+            </Component>
+            <Component Id="cmp4B4C21726857A8D9626CBEE98FD838D0" Directory="dirA0912636B96C00A484E583AA4148CBAC" Guid="{A77C5941-4072-4BBA-859C-F2ACEC22003B}">
+                <File Id="fil8DE8DFF4CAF66EBEC4DA9532BFCBEB13" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\Content\refresh.png" />
+            </Component>
+            <Component Id="cmpFC9186D124E98CBDCA6D434FA7AE8B18" Directory="dirA0912636B96C00A484E583AA4148CBAC" Guid="{1CF17BB7-179B-4F76-BE07-7C0D178FB293}">
+                <File Id="fil9827331578A99EB808310419C9B504C7" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\Content\start.jpg" />
+            </Component>
+            <Component Id="cmp66D82CACA3E28D3C267950BB2B5F21CF" Directory="dir16A80E821B0C43336CA5F544B935CD45" Guid="{C9D15129-CB5D-458D-B177-BD59086E099B}">
+                <File Id="fil0759E193DA236C841EC033B752018493" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\de\PdfSharp.Charting.resources.dll" />
+            </Component>
+            <Component Id="cmp93C01F36572C29936687A86E6BEEA355" Directory="dir16A80E821B0C43336CA5F544B935CD45" Guid="{C3227A2C-184F-4F64-9D3E-A8F9016B4A6C}">
+                <File Id="fil8DD71AC3A25F527E2C2294864951C726" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\de\PdfSharp.resources.dll" />
+            </Component>
+            <Component Id="cmpDF390F3A6752D0E2B6C556CAC64756BB" Directory="dir47D359E5D3BEF2EA5C0D972FC17A007C" Guid="{04E57A2E-06C1-4E29-BF78-423B2B8DA4D9}" KeyPath="yes">
+                <CreateFolder />
+            </Component>
+            <Component Id="cmpA45B1B1E2A4CEB67E1E7B71287A6792C" Directory="dir86950C7CE3DD0051B78BD85D98C081A4" Guid="{E8CA2E69-882A-4ED4-AE00-CBC384D831A4}">
+                <File Id="fil6AF08D6C17910941DF2BBD972A0DEA09" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\x86\sqlceca40.dll" />
+            </Component>
+            <Component Id="cmpBFD56BC062199E6866331E1BA13A57F9" Directory="dir86950C7CE3DD0051B78BD85D98C081A4" Guid="{7246F660-A750-4CC9-B488-65200EAB119A}">
+                <File Id="fil49F3FD0D93A893308A9FED7B04F626EE" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\x86\sqlcecompact40.dll" />
+            </Component>
+            <Component Id="cmp154F59258374DF8D6D39951B722D604A" Directory="dir86950C7CE3DD0051B78BD85D98C081A4" Guid="{6ACFB320-3A89-41EC-A774-45AD8D123D46}">
+                <File Id="filEFAC5796D2A7523532E82BFE3B481953" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\x86\sqlceer40EN.dll" />
+            </Component>
+            <Component Id="cmpD825EE244AC4130F86C36DAD2909E4F3" Directory="dir86950C7CE3DD0051B78BD85D98C081A4" Guid="{8BAB873F-6621-41FC-95C6-AC0DD5115818}">
+                <File Id="fil891EB2C8BC21335C1349BA13E656B32A" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\x86\sqlceme40.dll" />
+            </Component>
+            <Component Id="cmp1DAD077E46C294A0135BA63B2568CB88" Directory="dir86950C7CE3DD0051B78BD85D98C081A4" Guid="{864F4F30-B95E-40FE-8BD8-A6952F0C35C4}">
+                <File Id="fil9268C49F11ACC68F950C9F640716AFCA" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\x86\sqlceqp40.dll" />
+            </Component>
+            <Component Id="cmpC3114BE814F4833CABD328589A05DA85" Directory="dir86950C7CE3DD0051B78BD85D98C081A4" Guid="{CF5F9505-50A0-430F-A3F9-A4B13587031A}">
+                <File Id="fil63A17C7940D9BC9F7B797EB3488C8142" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\x86\sqlcese40.dll" />
+            </Component>
+            <Component Id="cmp80D5F58DB003C7EDA81C0524F7F4B0A6" Directory="dir37CF5DB5C82A5C0554B7043CCD28EDDF" Guid="{E09D29C8-D178-4C30-9919-3752125BD251}">
+                <File Id="filAB314D9140F5239C3A2A783BE606CF0F" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+            </Component>
+            <Component Id="cmp9946C9EEA3F63BF30233DDAEF5E25A95" Directory="dir37CF5DB5C82A5C0554B7043CCD28EDDF" Guid="{2CCE3964-57F7-4073-8F7E-DB1D82FF02C3}">
+                <File Id="fil3B6C78CE6F13A5C1E25D8F454A050B3E" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\x86\Microsoft.VC90.CRT\msvcr90.dll" />
+            </Component>
+            <Component Id="cmpD466098350D6CA9B2DA711F836B33A2D" Directory="dir37CF5DB5C82A5C0554B7043CCD28EDDF" Guid="{8A388302-55F5-479E-8728-32F708379B37}">
+                <File Id="fil6B938A20C5E6E271BF7E54441F52E059" KeyPath="yes" Source="$(var.CustomerTrackingExecutableFiles)\x86\Microsoft.VC90.CRT\README_ENU.txt" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir3253514C636225C16110FA9084C3AD1B">
+            <Directory Id="dir110F985D3947BDF635CBEAE56330133C" Name="Logs" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir5B708A4969ADC640207C26219C666BF4">
+            <Directory Id="dir131C69EF83D78668A94E415512CC1329" Name="Microsoft.VC90.CRT" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir86950C7CE3DD0051B78BD85D98C081A4">
+            <Directory Id="dir37CF5DB5C82A5C0554B7043CCD28EDDF" Name="Microsoft.VC90.CRT" />
+        </DirectoryRef>
+    </Fragment>
+</Wix>
